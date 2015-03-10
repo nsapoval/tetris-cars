@@ -1,0 +1,52 @@
+<html>
+<head>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<link type="text/css" rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+<link type="text/css" rel="stylesheet" href="../static/cars.css" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="../static/base.js"></script>
+<script type="text/javascript">
+function draw() {  
+  clear();
+  check();
+  if(game_over == true && database_writeable == true) {
+    database_writeable = false;
+    $.get("/_update_scores", {user: $('span[id="user"]').text(), score: $("#score .value").text()});
+  }
+  obstacles();
+}
+
+window.addEventListener("load", init, false);
+</script>
+
+</head>
+
+<body>
+
+<div id="info">
+    <div id="score" class="score">Score: <span class='value'></span></div>
+    <div id="high_score" class="score">High Score: <span class='value'></span></div>
+</div>
+
+<div id="game">
+        <canvas class="tetris-display" id="canvas" width="90" height="150"></canvas>
+</div>
+    
+<div id="scoreboard">
+    <div id="username">User: <span id="user">{{ user }}</span></div>
+    <hr style="width: 100%; float: left;">
+    <table id="score-table">
+        {% for player in top_players %}
+        <tr class="table-entry">
+            <td>{{ player.name }}</td>
+            <td>{{ player.score }}</td>
+        </tr>
+        {% endfor %}
+    <table>
+</div>
+
+</body>
+</html>

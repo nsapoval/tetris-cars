@@ -1,0 +1,53 @@
+.tetris-display {
+    background-color: #A5BC8F;
+    padding: 2px;
+    border: 1px solid;
+    outline: black solid 3px;
+    outline-offset: 2px;
+}
+
+#game {
+    padding-left: 42%;
+    padding-top: 0.25%;
+    float: left;
+}
+
+#info {
+    padding-left: 42.5%
+}
+
+#scoreboard {
+    float: left;
+    padding-left: 1%;
+    font-size: 18px;
+    text-align: center;
+}
+
+.score {
+    font-size: 18px;
+    float: left;
+    text-align: left;
+    padding-top: 8%;
+    padding-left: 1%
+}
+
+#username {
+    font-size: 18px;
+    float: left;
+    width: 100%;
+    text-align: left;
+    padding-top: 8%;
+    padding-left: 4%
+}
+
+#score-table {
+    font-size: : 18px;
+    float: left;
+    width: 100%;
+    padding-top: 8%;
+    padding-left: 4%   
+}
+
+.table-entry {
+    font-size: 18px;
+}
